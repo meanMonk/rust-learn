@@ -1,3 +1,45 @@
+// mod print;
+// mod vars;
+// mod types;
+// mod strings;
+// mod tuples;
+// mod arrays;
+// mod vectors;
+// mod conditional;
+// mod loops;
+// mod functions;
+// mod pointer_reference;
+// mod structs;
+// mod enums;
+mod cli;
+
 fn main() {
-    println!("Hello, world!");
+    // println!("######### PRINT MODULE  #########");
+    // print::run();
+    // println!("######### VARS MODULE  #########");
+    // vars::run();
+    // println!("######### TYPES MODULE  #########");
+    // types::run();
+    // println!("######### STRINGS MODULE  #########");
+    // strings::run();
+    // println!("######### TUPLES MODULE  #########");
+    // tuples::run();
+    // println!("######### TUPLES MODULE  #########");
+    // arrays::run();
+    // println!("######### VECTOR MODULE  #########");
+    // vectors::run();
+    // println!("######### Conditionals MODULE  #########");
+    // conditional::run();
+    // println!("######### LOOPS MODULE  #########");
+    // loops::run();
+    // println!("######### LOOPS MODULE  #########");
+    // functions::run();
+    // println!("######### POINTERS & REFERENCE MODULE  #########");
+    // pointer_reference::run();
+    // println!("######### STRUCTS MODULE  #########");
+    // structs::run();
+    // println!("######### ENUMS MODULE  #########");
+    // enums::run();
+    println!("######### CLI MODULE  #########");
+    cli::run();
 }
