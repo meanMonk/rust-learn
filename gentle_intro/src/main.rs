@@ -1,7 +1,7 @@
 use regex::Regex;
 use time::OffsetDateTime;
 
-mod file_sys_proces;
+mod file_sys_process;
 
 fn main() {
     println!("Hello, world!");
@@ -15,8 +15,15 @@ fn main() {
     
     println!("Did our {now} match? {}", re.is_match(&now.to_string()));
     
-    file_sys_proces::read_all_lines("sample.txt").expect("read failed");
+    file_sys_process::read_all_lines("sample.txt").expect("read failed");
     
-    file_sys_proces::write_out("test.txt").expect("write failed");
+    file_sys_process::write_out("test.txt").expect("write failed");
     
+    file_sys_process::print_cargo_path().expect("print home failed");
+    
+    file_sys_process::travel_to_home_dir().expect("failed to travel back!");
+    
+    file_sys_process::print_readme_path().expect("failed to load readme path");
+    
+    file_sys_process::file_meta_data();
 }
