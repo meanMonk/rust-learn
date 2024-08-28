@@ -4,6 +4,7 @@
 
 use std::fs::File;
 use std::io::prelude::*;
+use std::os::unix::fs::PermissionsExt;
 use std::path::PathBuf;
 use std::{env, io};
 
@@ -127,7 +128,7 @@ pub fn file_meta_data() {
     let mut path = env::current_dir().expect("can't access current dir");
     
     path.push("src");
-    path.push("file_sys_process.rs");
+    path.push("file_sys_programs.rs");
     
     if path.is_file() {
         match path.metadata() {
@@ -135,6 +136,7 @@ pub fn file_meta_data() {
                 println!("Type {:?}", data.file_type());
                 println!("Len {:?}", data.len());
                 println!("per {:?}", data.permissions());
+                println!("platform spec permission 🔒 {:o}", data.permissions().mode());
                 println!("modified {:?}", data.modified());
             }, 
             Err(err) => println!("error {:?}", err)
