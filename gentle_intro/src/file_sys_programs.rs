@@ -1,6 +1,6 @@
 // use fs::File; which implements io::Read defines read methods.
 // for buffered reading there is `io::BufRead` which gives `read_line` and return `lines` iterator
-// fs::File also implements io::Write.
+// fs::File also implements io::Write
 
 use std::fs::File;
 use std::io::prelude::*;

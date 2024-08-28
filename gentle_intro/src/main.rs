@@ -1,5 +1,11 @@
+
 use regex::Regex;
 use time::OffsetDateTime;
+
+#[macro_use]
+extern crate serde_derive;
+extern crate serde_json;
+extern crate toml;
 
 mod file_sys_programs;
 mod process_programs;
@@ -7,6 +13,8 @@ mod process_programs;
 mod foo;
 mod boo;
 
+mod learn_json;
+mod learn_serde_json;
 /* 
     Please note that 
     `use` 
@@ -60,4 +68,8 @@ fn main() {
     
     println!("{}❓", boo::bar::question());
 
+    learn_json::print_json();
+
+    learn_serde_json::learn_serde::use_serde();
+    
 }
