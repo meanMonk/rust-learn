@@ -4,6 +4,26 @@ use time::OffsetDateTime;
 mod file_sys_programs;
 mod process_programs;
 
+mod foo;
+mod boo;
+
+/* 
+    Please note that 
+    `use` 
+    has nothing to do with importing, 
+    It simply specifies visibility of module names. For example:
+    
+    {
+        use boo::bar;
+        let q = bar::question();
+    }
+    {
+        use boo::bar::question;
+        let q = question();
+    }
+
+*/
+
 fn main() {
     println!("Hello, world!");
     
@@ -33,5 +53,11 @@ fn main() {
     process_programs::check_rustc();
     process_programs::check_rustc_output();
     
+    let f = foo::Foo::new("hello struct");
+    println!("👍{:?}", f);
     
+    println!("Answer is {}", boo::answer());
+    
+    println!("{}❓", boo::bar::question());
+
 }
