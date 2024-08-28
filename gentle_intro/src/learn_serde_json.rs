@@ -2,6 +2,8 @@
 // use to serialize Rust Data structure to JSON.
 // use to deserialize Json to Rust Data Strcture.
 
+// serde seralize / deserialize also support other file format.
+
 #[derive(Serialize, Deserialize, Debug)]
 struct Person {
     name: String,

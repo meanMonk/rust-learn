@@ -15,6 +15,9 @@ mod boo;
 
 mod learn_json;
 mod learn_serde_json;
+
+mod learn_regex;
+
 /* 
     Please note that 
     `use` 
@@ -71,5 +74,7 @@ fn main() {
     learn_json::print_json();
 
     learn_serde_json::learn_serde::use_serde();
+
     
+    learn_regex::validate_regex();
 }
