@@ -48,8 +48,8 @@ pub fn read_all_lines(filename: &str) -> io::Result<()> {
     Ok(())
 }
 
-pub fn write_out(f: &str) -> io::Result<()> {
-    let mut out = File::create(f)?;
+pub fn write_out(filename: &str) -> io::Result<()> {
+    let mut out = File::create(filename)?;
     write!(out,"answer is {}\n", 42)?;
     Ok(())
 }
