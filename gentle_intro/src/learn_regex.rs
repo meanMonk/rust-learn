@@ -1,7 +1,5 @@
 // When processing anything except simple text, 
 // Regular expression make your life much easier.
-
-
 extern crate regex;
 use regex::Regex;
 
