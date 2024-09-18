@@ -18,6 +18,8 @@ mod learn_serde_json;
 
 mod learn_regex;
 mod learn_date_time;
+
+mod looping_ifying;
 /* 
     Please note that 
     `use` 
@@ -36,47 +38,51 @@ mod learn_date_time;
 */
 
 fn main() {
-    println!("Hello, world!");
+    println!("Hello, world!"); // The exclamation mark(!) indicates that this is macro call.
+
+    looping_ifying::loop_main();
     
-    let name = String::from("Rustacian Bro!");
-    println!("Good Morning {}", name);
     
-    let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
+    // introduce variable.
+    // let name: String = String::from("Rustacian Bro!");
+    // println!("Good Morning {}", name);
     
-    let now = OffsetDateTime::now_utc();
+    // let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
     
-    println!("Did our {now} match? {}", re.is_match(&now.to_string()));
+    // let now = OffsetDateTime::now_utc();
     
-    file_sys_programs::read_all_lines("sample.txt").expect("read failed");
+    // println!("Did our {now} match? {}", re.is_match(&now.to_string()));
     
-    file_sys_programs::write_out("test.txt").expect("write failed");
+    // file_sys_programs::read_all_lines("sample.txt").expect("read failed");
     
-    file_sys_programs::print_cargo_path().expect("print home failed");
+    // file_sys_programs::write_out("test.txt").expect("write failed");
     
-    file_sys_programs::travel_to_home_dir().expect("failed to travel back!");
+    // file_sys_programs::print_cargo_path().expect("print home failed");
     
-    file_sys_programs::print_readme_path().expect("failed to load readme path");
+    // file_sys_programs::travel_to_home_dir().expect("failed to travel back!");
     
-    file_sys_programs::file_meta_data();
+    // file_sys_programs::print_readme_path().expect("failed to load readme path");
+    
+    // file_sys_programs::file_meta_data();
     
     // process related programs.
-    println!("💻💻💻💻");
-    process_programs::check_rustc();
-    process_programs::check_rustc_output();
+    // println!("💻💻💻💻");
+    // process_programs::check_rustc();
+    // process_programs::check_rustc_output();
     
-    let f = foo::Foo::new("hello struct");
-    println!("👍{:?}", f);
+    // let f = foo::Foo::new("hello struct");
+    // println!("👍{:?}", f);
     
-    println!("Answer is {}", boo::answer());
+    // println!("Answer is {}", boo::answer());
     
-    println!("{}❓", boo::bar::question());
+    // println!("{}❓", boo::bar::question());
 
-    learn_json::print_json();
+    // learn_json::print_json();
 
-    learn_serde_json::learn_serde::use_serde();
+    // learn_serde_json::learn_serde::use_serde();
 
     
-    learn_regex::validate_regex();
+    // learn_regex::validate_regex();
     
-    learn_date_time::review_date();
+    // learn_date_time::review_date();
 }
