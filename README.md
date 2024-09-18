@@ -1,11 +1,21 @@
 # rust-learn
 
+> RUST IS CURLY BRACES LANGUAGE WITH SEMICOLONS
+
 Rust install the below two modules along with compiler for rust.
 
 1. rustup > helps to update the rust version as it's having frequent updates.
 2. cargo > it's package manager for rust. 
  - `packages` in rust called as `crates` you can access all available rust crates at [crates](https://crates.io/)
 
+## Visual Studio Plugins 
+- plugins for better rust support
+
+[rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+
+[Dependencies Manage Tool](https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi)
+
+[Better Toml](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
 
 ## Intro.
 --- 
@@ -35,3 +45,9 @@ you can build anything low which you can build in rust.
  4. **Embedded Program** 
  5. **Game development**
  6. **Block Chain Smart Contracts**
+
+
+
+NOTES:
+
+> So I'd suggest you become familiar with all the iterator methods. because they are crucial to writing good Rust code without having to write loops out all the time
