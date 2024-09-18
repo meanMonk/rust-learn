@@ -51,3 +51,8 @@ you can build anything low which you can build in rust.
 NOTES:
 
 > So I'd suggest you become familiar with all the iterator methods. because they are crucial to writing good Rust code without having to write loops out all the time
+
+Tracking learning under projects.
+
+[RUST Learning PROJECTS](https://github.com/users/meanMonk/projects/1/views/1)
+
