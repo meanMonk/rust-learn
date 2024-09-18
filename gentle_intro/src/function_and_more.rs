@@ -37,9 +37,39 @@ fn fn_one() {
         let factorial_5 = fn_factorial(i);
         println!("Factorial of {i} => {factorial_5}"); // named params.
     }
-        
+    
+}
+
+fn by_ref(x: &i32) -> i32 {
+    *x + 1
+}
+
+fn by_ref_no_deref(x: &i32) -> i32 {
+    x + 1
+}
+
+// no return type defined as not returning anything.
+fn modifies_parent(x: &mut f64) {
+    *x = 31.0;
+}
+
+/// Reference & Dereferences. 
+fn ref_main() {
+    let i = 10;
+    let res1 = by_ref(&i);
+    let res2 = by_ref(&42);
+    let res3 = by_ref_no_deref(&i);
+    println!("{i} => {res1} {res2}");
+    println!("no deref {i} => {res3} ");
+    
+    // modifies mut param value.
+    let mut float_j = 0.0;
+    modifies_parent(&mut float_j);
+    println!("modified value of float_j is {float_j}");
+    
 }
 
 pub fn fn_more_main() {
     fn_one();
+    ref_main();
 }
