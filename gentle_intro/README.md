@@ -14,3 +14,7 @@
 - The `()` type is empty type, nada, void, zilch, nothing. everything in rust has value but sometime it's nothing.
 - It's not wrong to use `return`, but code is cleaner without it. you will still use `return` for returning early from function.
 - Values can also be passed by reference. A reference is created by `&` and dereferenced by `*`.
+- Where to find repo.
+  - `rustup doc --std`
+  - `rustup doc --help`
+- `std::f64::consts::PI` is a mouthful! `::` means much the same as it does in C++, (often written using `'.'` in other languages) - it is a fully qualified name. We get this full name from the second hit on searching for PI.
