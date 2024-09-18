@@ -4,7 +4,8 @@
 
 // simple user define fiunction.
 
-use std::f32::consts::PI;
+// let's make more readable with `use` statement
+use std::f64::consts;
 
 fn fn_sqr(x: f64) -> f64 {
     x * x
@@ -73,14 +74,14 @@ fn ref_main() {
 
 
 fn fn_cosine() {
-    let pi_double =  2.0 * std::f32::consts::PI;
+    let pi_double =  2.0 * consts::PI;
     
     let abs_diff = (pi_double.cos() - 1.0).abs();
-    let epsilon = f32::EPSILON;
+    let epsilon = f64::EPSILON;
     println!("abs diff is {abs_diff} {epsilon}");
-    assert!(abs_diff <= f32::EPSILON);
+    assert!(abs_diff <= f64::EPSILON);
     
-    let pi: f64 = std::f64::consts::PI;
+    let pi: f64 = consts::PI;
     let x = pi / 2.0;
     let consine = x.cos();
     println!("cosine of {pi} {consine}");
