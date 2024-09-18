@@ -7,6 +7,8 @@ extern crate serde_derive;
 extern crate serde_json;
 extern crate toml;
 
+mod function_and_more;
+
 mod file_sys_programs;
 mod process_programs;
 
@@ -41,6 +43,8 @@ fn main() {
     println!("Hello, world!"); // The exclamation mark(!) indicates that this is macro call.
 
     looping_ifying::loop_main();
+    
+    function_and_more::fn_more_main();;
     
     
     // introduce variable.
