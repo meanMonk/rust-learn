@@ -9,7 +9,7 @@ extern crate toml;
 
 mod function_and_more;
 mod arrays_slices;
-
+mod option;
 mod file_sys_programs;
 mod process_programs;
 
@@ -49,6 +49,7 @@ fn main() {
     
     arrays_slices::array_slices_main();
     
+    option::option_main();
     
     // introduce variable.
     // let name: String = String::from("Rustacian Bro!");
