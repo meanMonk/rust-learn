@@ -8,6 +8,7 @@ extern crate serde_json;
 extern crate toml;
 
 mod function_and_more;
+mod arrays_slices;
 
 mod file_sys_programs;
 mod process_programs;
@@ -44,7 +45,9 @@ fn main() {
 
     looping_ifying::loop_main();
     
-    function_and_more::fn_more_main();;
+    function_and_more::fn_more_main();
+    
+    arrays_slices::array_slices_main();
     
     
     // introduce variable.

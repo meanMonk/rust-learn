@@ -74,6 +74,7 @@ fn ref_main() {
 
 
 fn fn_cosine() {
+    let _m_pi : f64 = 3.1416; //we need to explicitly provide f64 else const could be either f32 or f64
     let pi_double =  2.0 * consts::PI;
     
     let abs_diff = (pi_double.cos() - 1.0).abs();
