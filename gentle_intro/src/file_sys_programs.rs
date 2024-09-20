@@ -42,18 +42,18 @@ pub fn read_all_lines(filename: &str) -> io::Result<()> {
     let file = File::open(&filename)?;
 
     let mut lines = Lines::new(file);
-    
+
     // while loop doesn't provide index so we need to manage it by increamenting it.
-    
-    let mut index =0;
+
+    let mut index = 0;
     while let Some(line) = lines.next() {
         let line = line?;
         println!("👀 {}", line);
-        
+
         if index == 5 {
             break;
         }
-        
+
         index += 1;
     }
 
@@ -101,8 +101,8 @@ pub fn travel_to_home_dir() -> io::Result<()> {
 // write program to search for the readme file from current project and travers back if not found.
 // this is how `git` works
 pub fn print_readme_path() -> io::Result<()> {
-    println!("🤩 {:^30}", "PRINT_README_PATH"); 
-    
+    println!("🤩 {:^30}", "PRINT_README_PATH");
+
     let mut current_path = env::current_dir().expect("Can't access current dir!");
 
     loop {
@@ -121,28 +121,29 @@ pub fn print_readme_path() -> io::Result<()> {
     Ok(())
 }
 
-
 pub fn file_meta_data() {
     println!("🤩 {:^30}", "FILE_META_DATA");
-    
+
     let mut path = env::current_dir().expect("can't access current dir");
-    
+
     path.push("src");
     path.push("file_sys_programs.rs");
-    
+
     if path.is_file() {
         match path.metadata() {
-            Ok(data)=> {
+            Ok(data) => {
                 println!("Type {:?}", data.file_type());
                 println!("Len {:?}", data.len());
                 println!("per {:?}", data.permissions());
-                println!("platform spec permission 🔒 {:o}", data.permissions().mode());
+                println!(
+                    "platform spec permission 🔒 {:o}",
+                    data.permissions().mode()
+                );
                 println!("modified {:?}", data.modified());
-            }, 
-            Err(err) => println!("error {:?}", err)
+            }
+            Err(err) => println!("error {:?}", err),
         }
     } else {
         println!("Not file {}", path.display());
     }
-    
 }

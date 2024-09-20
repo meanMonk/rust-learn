@@ -47,14 +47,13 @@ pub fn print_json() {
     println!("🦸 : {:#}", json::parse(&dump).expect("parse failed!"));
 }
 
-
 /*
-    // There is a downside to using this crate, because of the mismatch between the amorphous, 
-    // dynamically-typed nature of JSON and the structured, static nature of Rust. 
-    // (The readme explicitly speaks of 'friction') 
-    // So if you did want to map JSON to Rust data structures, 
-    // you would end up doing a lot of checking,
-    //  because you can not assume that the received structure matches your structs! For that, 
-    // a better solution is 
-    // `serde_json` where you serialize Rust data structures into JSON and deserialize JSON into Rust.
-*/ 
+// There is a downside to using this crate, because of the mismatch between the amorphous,
+// dynamically-typed nature of JSON and the structured, static nature of Rust.
+// (The readme explicitly speaks of 'friction')
+// So if you did want to map JSON to Rust data structures,
+// you would end up doing a lot of checking,
+//  because you can not assume that the received structure matches your structs! For that,
+// a better solution is
+// `serde_json` where you serialize Rust data structures into JSON and deserialize JSON into Rust.
+*/
