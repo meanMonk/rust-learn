@@ -29,6 +29,9 @@ fn insert_remove_fn() {
     v2.dedup(); // to remove duplicated element from vec.
     println!("Vec After dedupe {:?}", v2);
     
+    v2.clear();
+    println!("Vec After CLEAR {:?}", v2);
+    
 }
 
 fn vec_extend() {

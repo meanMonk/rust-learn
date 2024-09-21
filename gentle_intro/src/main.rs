@@ -14,6 +14,7 @@ mod vectors;
 mod strings;
 mod interlude;
 mod matching;
+mod reading_files;
 
 
 mod file_sys_programs;
@@ -65,8 +66,11 @@ fn main() {
     
     interlude::interlude_main();
 
-    matching::matching_main()
+    matching::matching_main();
     
+    file_sys_programs::fs_program_main();
+    
+    reading_files::main();
     // introduce variable.
     // let name: String = String::from("Rustacian Bro!");
     // println!("Good Morning {}", name);

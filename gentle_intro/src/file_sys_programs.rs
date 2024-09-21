@@ -37,7 +37,7 @@ impl<R: Read> Lines<R> {
     }
 }
 
-pub fn read_all_lines(filename: &str) -> io::Result<()> {
+fn read_all_lines(filename: &str) -> io::Result<()> {
     println!("🤩 {:^30}", "READ_ALL_LINES");
     let file = File::open(&filename)?;
 
@@ -60,14 +60,14 @@ pub fn read_all_lines(filename: &str) -> io::Result<()> {
     Ok(())
 }
 
-pub fn write_out(filename: &str) -> io::Result<()> {
+fn write_out(filename: &str) -> io::Result<()> {
     println!("🤩 {:^30}", "WRITE_OUT");
     let mut out = File::create(filename)?;
     write!(out, "answer is {}\n", 42)?;
     Ok(())
 }
 
-pub fn print_cargo_path() -> io::Result<()> {
+fn print_cargo_path() -> io::Result<()> {
     println!("🤩 {:^30}", "PRINT_CARGO_PATH");
     let home = env::home_dir().expect("home dir");
 
@@ -81,7 +81,7 @@ pub fn print_cargo_path() -> io::Result<()> {
     Ok(())
 }
 
-pub fn travel_to_home_dir() -> io::Result<()> {
+fn travel_to_home_dir() -> io::Result<()> {
     println!("🤩 {:^30}", "TRAVEL_TO_HOME_DIR");
     // read current dir.
     let mut current_path = env::current_dir().expect("can't access current dir");
@@ -100,7 +100,7 @@ pub fn travel_to_home_dir() -> io::Result<()> {
 
 // write program to search for the readme file from current project and travers back if not found.
 // this is how `git` works
-pub fn print_readme_path() -> io::Result<()> {
+fn print_readme_path() -> io::Result<()> {
     println!("🤩 {:^30}", "PRINT_README_PATH");
 
     let mut current_path = env::current_dir().expect("Can't access current dir!");
@@ -121,7 +121,7 @@ pub fn print_readme_path() -> io::Result<()> {
     Ok(())
 }
 
-pub fn file_meta_data() {
+fn file_meta_data() {
     println!("🤩 {:^30}", "FILE_META_DATA");
 
     let mut path = env::current_dir().expect("can't access current dir");
@@ -146,4 +146,12 @@ pub fn file_meta_data() {
     } else {
         println!("Not file {}", path.display());
     }
+}
+
+
+pub fn fs_program_main() {
+    travel_to_home_dir().expect("to travel back!");
+    print_cargo_path().expect("expect to print cargo path!");
+    print_readme_path().expect("expect to print readme path!");
+    file_meta_data();
 }
