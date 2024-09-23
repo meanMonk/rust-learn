@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 chrono = "0.4.38"
+ferris-says = "0.3.1"
 json = "0.12.4"
 regex = "1.10.6"
 serde = "1.0.209"
