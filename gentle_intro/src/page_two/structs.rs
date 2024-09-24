@@ -136,7 +136,11 @@ fn struct_life_learn() {
     println!("2 is {}", how(2));
     println!("4 is {}", how(4));
 
+    let s = "I'm a little string".to_string();
+    let b =   B { name: &s };
+    println!("{:?}", b);
     // println!("{:?}", create_b());
+    
 }
 
 pub fn main() {
