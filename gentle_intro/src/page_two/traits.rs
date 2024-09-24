@@ -107,6 +107,12 @@ fn range_learn() {
     for x in range(0.0,1.0, 0.1) {
         println!("{:.2} ", x);
     }
+    // as impl iterator we other mthods available.
+    // so can map and collect them into vector.
+    
+    let v_range: Vec<f64> = range(0.0, 1.0, 0.1).map(|x| x.abs()).collect();
+    
+    println!("vec of range {:?}", v_range);
 }
 
 
