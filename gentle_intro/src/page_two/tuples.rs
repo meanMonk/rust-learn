@@ -1,5 +1,7 @@
 // Tuples.
 // useful to return multiple values form function
+// Tuples are convenient but saying t.1 so on and keep tracking of the meaning of each part is tedious
+// for anything that ins't simples.
 
 fn add_mul(x: f64,y:f64) -> (f64,f64) {
     (x+y, x*y)
