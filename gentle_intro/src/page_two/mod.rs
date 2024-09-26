@@ -3,11 +3,11 @@ use crate::greet;
 mod closures;
 mod enums;
 mod generic_functions;
+mod generic_struct;
 mod struct_dynamic_data;
 mod structs;
 mod traits;
 mod tuples;
-mod generic_struct;
 
 pub fn main() {
     greet::greet("Let's Learn Structs, Enums and Matching!");
