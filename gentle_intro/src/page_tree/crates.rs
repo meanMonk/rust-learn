@@ -47,4 +47,5 @@
 // to build and run the programs.
 // `cargo run`
 
-// 
+// Cargo is considered to be one of the great strengths of Rust ecosystem.
+// As it's does lot of work for us.

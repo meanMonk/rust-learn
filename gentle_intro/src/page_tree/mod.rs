@@ -4,6 +4,7 @@ mod file_path_directories;
 mod file_reading;
 mod learn_json;
 mod learn_process;
+mod learn_serde_json;
 mod modules;
 
 pub fn main() {
@@ -13,4 +14,5 @@ pub fn main() {
     learn_process::main();
     modules::main();
     learn_json::main();
+    learn_serde_json::main();
 }
