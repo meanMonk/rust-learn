@@ -80,9 +80,10 @@ fn reading_one() {
     
     let res =  read_all_lines_two("sample.txt").expect("bad file name!");
     println!("Efficient way {:?}", res);
-    
-    let res = read_and_write_to_other("sample.txt", "test.txt").expect("something went wrong");
-    println!("Data has been copied {:?}", res);
+ 
+    // NOTE: for copying data we can
+    // let res = read_and_write_to_other("sample.txt", "test.txt").expect("something went wrong");
+    // println!("Data has been copied {:?}", res);
 }
 
 pub fn main() {
