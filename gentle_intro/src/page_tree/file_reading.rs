@@ -55,14 +55,17 @@ fn read_all_lines_two(filename: &str) -> io::Result<()>{
 fn read_and_write_to_other(sourcename: &str, targetname: &str) -> Result<()>{
     
     let sourcefile = File::open(&sourcename)?;
-    let mut targetfile = File::create(&targetname)?;
+    let targetfile = File::create(&targetname)?;
     
     let mut reader = io::BufReader::new(sourcefile);
+    
+    let mut writer = io::BufWriter::new(targetfile);
+    
     let mut buf = String::new();
     
     while reader.read_line(&mut buf)? > 0 {
         {
-            write!(targetfile," 🚦 {}", buf)?;
+            write!(writer," 🚦 {}", buf)?;
         }
         buf.clear();
     }
