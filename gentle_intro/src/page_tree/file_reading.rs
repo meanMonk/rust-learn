@@ -14,11 +14,52 @@
 
 // easiest way to make all traits are visible.
 
-use std::io::prelude::*;
+use std::{fs::File, io::{self, BufRead, BufReader}};
 
 
 
+fn read_all_lines(filename: &str) -> io::Result<()> {
+    let file = File::open(&filename)?;
+    
+    let reader =  io::BufReader::new(file);
+    
+    // `lines` being iterator so it's straightforward to read file into the vector of string 
+    // using `collect` or `print out the lines with line number using enumerate iterator.
+    for line in reader.lines().enumerate() {
+        let string = line.1?;
+        println!("-> {} = {:?} {:?}", line.0, string, string.len());
+    }
+    
+    Ok(())
+}
+
+// efficient way of read_line 
+
+fn read_all_lines_two(filename: &str) -> io::Result<()>{
+    let file = File::open(&filename)?;
+    let mut reader = BufReader::new(file);
+    let mut buf =  String::new();
+    
+    while reader.read_line(&mut buf)? > 0 {
+        {
+            let line = buf.trim_end();
+            println!("'{}'", line);
+        }
+        buf.clear();
+    }
+    
+    Ok(())
+    
+}
+
+fn reading_one() {
+    let res =  read_all_lines("sample.txt").expect("bad file name!");
+    println!("File read by line {:?}", res);
+    
+    let res =  read_all_lines_two("sample.txt").expect("bad file name!");
+    println!("Efficient way {:?}", res);
+}
 
 pub fn main() {
-    
+    reading_one();   
 }
