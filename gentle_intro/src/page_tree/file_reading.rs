@@ -14,8 +14,7 @@
 
 // easiest way to make all traits are visible.
 
-use std::{fs::File, io::{self, BufRead, BufReader}};
-
+use std::{fs::File, io::{self, BufRead, BufReader, Result, Write}};
 
 
 fn read_all_lines(filename: &str) -> io::Result<()> {
@@ -52,12 +51,35 @@ fn read_all_lines_two(filename: &str) -> io::Result<()>{
     
 }
 
+
+fn read_and_write_to_other(sourcename: &str, targetname: &str) -> Result<()>{
+    
+    let sourcefile = File::open(&sourcename)?;
+    let mut targetfile = File::create(&targetname)?;
+    
+    let mut reader = io::BufReader::new(sourcefile);
+    let mut buf = String::new();
+    
+    while reader.read_line(&mut buf)? > 0 {
+        {
+            write!(targetfile," 🚦 {}", buf)?;
+        }
+        buf.clear();
+    }
+    
+    
+    Ok(())
+}
+
 fn reading_one() {
     let res =  read_all_lines("sample.txt").expect("bad file name!");
     println!("File read by line {:?}", res);
     
     let res =  read_all_lines_two("sample.txt").expect("bad file name!");
     println!("Efficient way {:?}", res);
+    
+    let res = read_and_write_to_other("sample.txt", "test.txt").expect("something went wrong");
+    println!("Data has been copied {:?}", res);
 }
 
 pub fn main() {
