@@ -7,6 +7,7 @@ mod struct_dynamic_data;
 mod structs;
 mod traits;
 mod tuples;
+mod generic_struct;
 
 pub fn main() {
     greet::greet("Let's Learn Structs, Enums and Matching!");
@@ -18,4 +19,5 @@ pub fn main() {
     enums::main();
     closures::main();
     struct_dynamic_data::main();
+    generic_struct::main();
 }
