@@ -50,7 +50,7 @@ impl Node {
     // small goes to left and other to right node.
 
     fn insert(&mut self, data: &str) {
-        if data < &self.payload {
+        if &data.to_string() < &self.payload {
             match self.left {
                 // if left has box go dipper
                 Some(ref mut n) => n.insert(data),
