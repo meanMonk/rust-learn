@@ -1,7 +1,7 @@
 mod basic;
 mod greet;
-mod page_two;
 mod page_tree;
+mod page_two;
 /*
     Please note that
     `use`
@@ -25,5 +25,4 @@ fn main() {
     basic::main();
     page_two::main();
     page_tree::main();
-    
 }

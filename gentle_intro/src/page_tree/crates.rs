@@ -6,11 +6,17 @@
 // this creates `libfoo.rlib`
 
 // -> to link this into our main programs.
+// `rustc mod4.rs --extern foo=./libfoo.rlib`
 
 // so main.rs looks like
-
-// extern crate foo;     
-
+/* 
+     extern crate foo;
+     
+     fn main() {
+        foo::Foo::bar::question();
+     }
+     
+ */
 // see the rust binaries size.
 
 // `ls -lh main`
@@ -25,3 +31,20 @@
 
 // we can access community provided library with help crates.io using Cargo.
 // cargo will look up correct version and download source for us.
+
+
+// Cargo
+// Rust std library is not very large compared to java and python.
+
+// it's straightforward to access community provided libraries in `crates.io` using cargo.
+// cargo check for version & download source for you.
+// ensure to download deps crates as well.
+
+// to add new deps edit `cargo.toml`
+// to do the build with cargo
+// `cargo build`
+
+// to build and run the programs.
+// `cargo run`
+
+// 
