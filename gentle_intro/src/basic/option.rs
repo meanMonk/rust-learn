@@ -14,19 +14,17 @@
 */
 // Options are commonly paired with pattern matching to query the presense of value and take action.
 //
-/* 
-    If you were to unwrap last, you would get a panic. 
-    But at least you can call is_some first to make sure - for instance, 
+/*
+    If you were to unwrap last, you would get a panic.
+    But at least you can call is_some first to make sure - for instance,
     if you had a distinct no-value default:
-    
+
     so the shortcut is to `option.unwrap_or` return value given if Option is None.
     get returns reference so you have to make up &i32./..
-    
+
     let last = *slice.get(5).unwrap_or(&-1);
 
 */
-
-
 
 // Addition of ppatern matching Option provides a wide variety of different methods.
 /*
@@ -97,7 +95,7 @@ pub fn option_main() {
     let optional = None;
     check_optional(optional);
     let optional = Some(Box::new(300));
-    
+
     check_optional(optional);
 
     // The question mark operator `?`.

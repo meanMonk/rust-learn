@@ -1,15 +1,15 @@
 use crate::greet;
 
-// Simple Enum 
+// Simple Enum
 // Enums are types which have few definite values.
 // a direction have only 4 values.
 
 #[derive(Debug)]
 enum Direction {
-    Up, 
-    Down, 
-    Left, 
-    Right
+    Up,
+    Down,
+    Left,
+    Right,
 }
 
 // enum can have method defines on them just like structs
@@ -25,10 +25,10 @@ impl Direction {
             Direction::Right => "Right",
         }
     }
-    
+
     // no perticular ordering here
     // here method defines successor of each define value.
-    
+
     fn next(&self) -> Direction {
         use Direction::*;
         match *self {
@@ -37,33 +37,30 @@ impl Direction {
             Down => Left,
             Left => Up,
         }
-        
     }
 }
 
 fn learn_enum() {
     let first = Direction::Up;
-    
+
     println!("first direction {}", first.as_str());
-    
-    
-    let mut d =  first;
-    
-    for _ in 0..8  {
+
+    let mut d = first;
+
+    for _ in 0..8 {
         println!("d {:?}", d);
         d = d.next();
     }
-    
 }
 
-// These enums do have a natural ordering, but you have to ask nicely. 
-// After placing `#[derive(PartialEq,PartialOrd)]` in front of enum Speed, 
+// These enums do have a natural ordering, but you have to ask nicely.
+// After placing `#[derive(PartialEq,PartialOrd)]` in front of enum Speed,
 // then it's indeed true that `Speed::Fast > Speed::Slow` and `Speed::Medium != Speed::Slow`.
 #[derive(PartialEq, PartialOrd)]
 enum Difficulty {
-    Easy = 1, 
+    Easy = 1,
     Medium,
-    Hard
+    Hard,
 }
 // `name` is too vague we can't called the term here is `variant`
 
@@ -79,7 +76,7 @@ impl Value {
     fn to_str(self) -> Option<String> {
         if let Value::Str(s) = self {
             Some(s)
-        } else{
+        } else {
             None
         }
     }
@@ -90,13 +87,12 @@ impl Value {
 
 fn eat_and_dump(v: Value) {
     use Value::*;
-    
+
     match v {
         Number(n) => println!("Number is {}", n),
         Str(s) => println!("Str is {}", s),
         Bool(b) => println!("Bool is {}", b),
     }
-    
 }
 
 fn learn_enum_two() {
@@ -104,11 +100,11 @@ fn learn_enum_two() {
     let n = Number(2.4);
     let s = Str("hello".to_string());
     let b = Bool(true);
-    
+
     println!("n {:?} s {:?} b {:?}", n, s, b);
-    
+
     println!("value of s {:?}", s.to_str());
-    
+
     let s = Str("hello world".to_string());
     eat_and_dump(n);
     eat_and_dump(s);

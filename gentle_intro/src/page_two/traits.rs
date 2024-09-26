@@ -28,18 +28,17 @@ fn trait_learn() {
     let answer_s = answer.show();
     println!("Answer {answer}");
     println!("Show : {answer_s}");
-    
+
     let float = 5.45;
     let float_s = float.show();
     println!("Float {float}");
     println!("Show: {float_s}");
 }
 
-
 // learning basic traits of the standard library (they tend to hunt in packs)
 
 // as traits has been defined no more needed!
-// #[derive(Debug)] 
+// #[derive(Debug)]
 struct Person {
     first_name: String,
     last_name: String,
@@ -52,7 +51,7 @@ impl Person {
             last_name: l_name.to_string(),
         }
     }
-    
+
     fn full_name(&self) -> String {
         format!("{} {}", self.first_name, self.last_name)
     }
@@ -70,9 +69,9 @@ impl fmt::Debug for Person {
 
 fn person_with_traits() {
     let person = Person::new("sahil", "Learning Rust");
-    
+
     println!("Welcome {:?}", person); // formatter added which ouput.
-    // Welcome sahil Learning Rust
+                                      // Welcome sahil Learning Rust
 }
 
 // ITERATOR OVER FLOATING POINT RANGE.
@@ -81,17 +80,21 @@ fn person_with_traits() {
 
 struct FRange {
     val: f64,
-    end: f64, 
-    incr: f64
+    end: f64,
+    incr: f64,
 }
 
-fn range(x1: f64,x2: f64,skip: f64) -> FRange {
-    FRange { val: x1, end: x2, incr: skip }
+fn range(x1: f64, x2: f64, skip: f64) -> FRange {
+    FRange {
+        val: x1,
+        end: x2,
+        incr: skip,
+    }
 }
 
 impl Iterator for FRange {
     type Item = f64;
-    
+
     fn next(&mut self) -> Option<Self::Item> {
         let res = self.val;
         if res >= self.end {
@@ -104,20 +107,19 @@ impl Iterator for FRange {
 }
 
 fn range_learn() {
-    for x in range(0.0,1.0, 0.1) {
+    for x in range(0.0, 1.0, 0.1) {
         println!("{:.2} ", x);
     }
     // as impl iterator we other mthods available.
     // so can map and collect them into vector.
-    
+
     let v_range: Vec<f64> = range(0.0, 1.0, 0.1).map(|x| x.abs()).collect();
-    
+
     println!("vec of range {:?}", v_range);
 }
 
-
 pub fn main() {
-    trait_learn();   
+    trait_learn();
     person_with_traits();
     range_learn();
 }

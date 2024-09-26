@@ -52,9 +52,9 @@ fn add_two() {
 
 fn pro_sum() {
     println!("{:^20}", "PRO_SUMATION_PRO");
-    
-    let arr = [12,22,23];
-    let sum : i32 =  arr.iter().sum();
+
+    let arr = [12, 22, 23];
+    let sum: i32 = arr.iter().sum();
     println!("sum of array {:?} - sum {sum}", arr);
 }
 
@@ -63,6 +63,6 @@ pub fn loop_main() {
     for_two();
     for_three();
     add_one();
-    add_two();    
+    add_two();
     pro_sum();
 }

@@ -21,8 +21,8 @@ mod page_two;
 
 fn main() {
     greet::greet("Rust Gentle Intro");
-    
+
     basic::main();
-    
+
     page_two::main();
 }
