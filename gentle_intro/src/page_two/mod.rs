@@ -3,6 +3,7 @@ use crate::greet;
 mod closures;
 mod enums;
 mod generic_functions;
+mod struct_dynamic_data;
 mod structs;
 mod traits;
 mod tuples;
@@ -15,5 +16,6 @@ pub fn main() {
     traits::main();
     generic_functions::main();
     enums::main();
-    closures::main()
+    closures::main();
+    struct_dynamic_data::main();
 }
