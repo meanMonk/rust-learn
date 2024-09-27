@@ -1,5 +1,4 @@
 use std::{
-    fmt::format,
     io::{self, Write},
     process::{Command, Stdio},
 };
