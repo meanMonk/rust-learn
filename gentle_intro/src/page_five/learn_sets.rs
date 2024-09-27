@@ -97,17 +97,17 @@ fn interactive_program() {
     let mut cli = Cli::new(Data{answer:42});
     
     cli.cmd("go",|data,args| {
-        if args.len() == 0 { return err("need 1 argument"); }
+        if args.len() == 0 { return Err("need 1 argument".to_string()); }
         data.answer = match args[0].parse::<i32>() {
             Ok(n) => n,
-            Err(e) => return err(e.description())
+            Err(e) => return Err(e.description().to_string())
         };
         println!("got {:?}", args);
-        ok(data.answer)
+        Ok(data.answer.to_string())
     });
 
     cli.cmd("show",|data,_| {
-        ok(data.answer)
+        Ok(data.answer.to_string())
     });
 
     cli.go();
@@ -118,7 +118,7 @@ pub fn main() {
     greet::greet("SETS |  Learn sets");
     
     sets_one();
-    // Interactive program not working.
-    // Need some fixes.
+    
     // interactive_program();
+    // Commenting out to avoid the go 
 }

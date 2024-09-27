@@ -22,9 +22,10 @@ mod learn_sets;
 pub fn main() {
     greet::greet("Stand Lib Functions!");
     
-    learn_vectors::main();
+    // learn_vectors::main();
     
-    learn_maps::main();
+    // learn_maps::main();
+    
     
     learn_sets::main();
 }

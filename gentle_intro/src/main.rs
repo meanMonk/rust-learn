@@ -2,6 +2,8 @@ mod basic;
 mod greet;
 mod page_tree;
 mod page_two;
+mod page_five;
+mod page_six;
 /*
     Please note that
     `use`
@@ -25,4 +27,6 @@ fn main() {
     basic::main();
     page_two::main();
     page_tree::main();
+    page_five::main();
+    page_six::main();
 }
