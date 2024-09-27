@@ -23,11 +23,11 @@ mod page_seven;
 */
 
 fn main() {
-    greet::greet("Rust Gentle Intro");
-    basic::main();
-    page_two::main();
-    page_tree::main();
-    page_five::main();
-    page_six::main();
+    // greet::greet("Rust Gentle Intro");
+    // basic::main();
+    // page_two::main();
+    // page_tree::main();
+    // page_five::main();
+    // page_six::main();
     page_seven::main();
 }

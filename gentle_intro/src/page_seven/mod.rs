@@ -7,6 +7,8 @@ mod shared_refs;
 mod multithreading;
 mod channels;
 mod higher_level;
+mod client;
+mod server;
 
 /* 
     To Learn:
@@ -24,5 +26,7 @@ pub fn main() {
     shared_refs::main();
     multithreading::main();
     channels::main();
-    // higher_level::main();
+    higher_level::main();
+    // server::main();
+    // client::main();
 }
