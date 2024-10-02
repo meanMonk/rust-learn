@@ -1,7 +1,9 @@
 pub fn is_leap_year(year: u64) -> bool {
-    if year % 100 == 0 {
-        year % 400 == 0
-    } else {
-        year % 4 == 0
+    // match on tuple
+    match (year % 4, year % 100, year % 400) {
+        (_,_,0) => true,
+        (_,0,_) => false,
+        (0,_,_) => true,
+        _ => false
     }
 }
