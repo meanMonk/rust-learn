@@ -45,11 +45,11 @@ type BoxResult<T> = Result<T, Box<dyn Error>>;
 
 /*
     // our programs will have application specific error conditions,
-    // we need to create our own error type. requirement
-    
+    // we need to create our own custom error type. 
+    basic requirement is:
     1/ may implement `Debug`
-    1/ may implement `Display`
-    1/ may implement `Error`
+    2/ may implement `Display`
+    3/ may implement `Error`
 
 */ 
 
@@ -100,8 +100,8 @@ impl From<ParseFloatError> for MyError{
 }
 
 fn parse_f64(s: &str, yes:bool) -> Result<f64, MyError> {
-    raises_my_error(yes)?;
-    let x: f64 = s.parse()?;
+    raises_my_error(yes)?; // ? is fine as itself to from.
+    let x: f64 = s.parse()?; // this will convert the parseFloatErrors to MyError
     Ok(x)
 }
 
@@ -110,6 +110,35 @@ fn error_handling_three() {
     println!(" => {:?}",parse_f64("42", true));
     println!(" => {:?}",parse_f64("?42", false));
 }
+
+//  not too complicated although a little long-winded
+// to write From conversions for all the other error types that need to play nice with MyError.
+// there is always another way to peel the avacado.
+// Error handlings is crucial when you package your droppings as cargo crate!
+
+// NOTE: currently `?` operator only work for `Result` not for `Option`
+// NOTE: Option has `ok_or_else` which converts it to `Result`
+// 
+// converting Option<String> to Result<String>.
+// There are 2 `Option` methods `ok_or` and `ok_or_else`
+// alternative to `ok_or` method. is use of `match`.
+/* 
+    let file = match args().skip(1).next() {
+        Some(s) => s,
+        None => bail!("error for provided file")
+    }
+*/ 
+
+// error chaining can be does easily. 
+// crate to use `error_chain`;
+/* 
+    // non-specific error
+    let f = File::open(&file)?;
+
+    // a specific chained error
+    let f = File::open(&file).chain_err(|| "unable to read the damn file")?;
+
+*/
 
 pub fn main() {
     println!("Error handling!");

@@ -5,6 +5,7 @@ mod page_two;
 mod page_five;
 mod page_six;
 mod page_seven;
+mod books_learning;
 /*
     Please note that
     `use`
@@ -24,10 +25,12 @@ mod page_seven;
 
 fn main() {
     greet::greet("Rust Gentle Intro");
-    basic::main();
-    page_two::main();
-    page_tree::main();
-    page_five::main();
-    page_six::main();
-    page_seven::main();
+    // basic::main();
+    // page_two::main();
+    // page_tree::main();
+    // page_five::main();
+    // page_six::main();
+    // page_seven::main();
+    
+    books_learning::main();
 }
