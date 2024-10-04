@@ -5,8 +5,6 @@
 use std::error; 
 use std::fmt;
 
-use json::number;
-
 
 type ResultOfError<T> = std::result::Result<T, Box<dyn error::Error>>;
 
@@ -28,9 +26,17 @@ fn double_first_number(vec: Vec<&str>) -> ResultOfError<i32> {
         .first()
         .ok_or_else(|| EmptyVec.into())
         .and_then(|s| {
-            s.parse::<i32>().map_err(|e| e.into())
+            s.parse::<i32>()
+            .map_err(|e| e.into())
             .map(|i| 2 * i)
         })
+}
+
+fn double_first_with_que (vec: Vec<&str>) -> ResultOfError<i32> {
+    
+    let first  = vec.first().ok_or(EmptyVec)?;
+    let parsed = first.parse::<i32>()?;
+    Ok(2 * parsed)
 }
 
 
@@ -47,7 +53,13 @@ pub fn main() {
     let empty = vec![];
     let strings = vec!["tofu", "23","43"];
     
-    print(double_first_number(numbers));   
-    print(double_first_number(empty));   
-    print(double_first_number(strings));   
+    // print(double_first_number(numbers));   
+    // print(double_first_number(empty));   
+    // print(double_first_number(strings));   
+    
+    println!("with `?` operator!");
+    
+    print(double_first_with_que(numbers));   
+    print(double_first_with_que(empty));   
+    print(double_first_with_que(strings));   
 }
