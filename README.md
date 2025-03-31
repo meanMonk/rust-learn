@@ -18,8 +18,6 @@ Rust install the below two modules along with compiler for rust.
 [Better Toml](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
 
 ## Intro.
---- 
-
 Rust is system programming languages.
 you can build anything low which you can build in rust.
  
@@ -29,8 +27,6 @@ you can build anything low which you can build in rust.
  4. etc.
  
 # Program Ideas
- ---
- 
  1. **CLI PROGRAM**
    - currency converter
    - emoji generator
