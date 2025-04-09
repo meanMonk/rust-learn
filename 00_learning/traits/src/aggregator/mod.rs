@@ -11,11 +11,8 @@ pub trait Summary {
     
     fn summarize(&self) -> String {
         String::from("(Read more..)")
-    }
-    
-    
-    
-};
+    }   
+}
 
 // to use default implementation of methods we called it like 
 
