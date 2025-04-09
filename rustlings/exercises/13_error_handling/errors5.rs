@@ -11,6 +11,8 @@
 // context. For this exercise, that context is the potential errors which
 // can be returned in a `Result`.
 
+
+// `Box<dyn ??>` "I want anything that does ??"
 use std::error::Error;
 use std::fmt;
 
@@ -48,7 +50,7 @@ impl PositiveNonzeroInteger {
 
 // TODO: Add the correct return type `Result<(), Box<dyn ???>>`. What can we
 // use to describe both errors? Is there a trait which both errors implement?
-fn main() {
+fn main() -> Result<(), Box<dyn Error>>{
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;
     println!("output={:?}", PositiveNonzeroInteger::new(x)?);
