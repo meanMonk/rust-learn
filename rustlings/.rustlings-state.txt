@@ -1,6 +1,6 @@
 DON'T EDIT THIS FILE!
 
-as_ref_mut
+box1
 
 intro2
 variables1
@@ -73,3 +73,6 @@ tests2
 tests3
 iterators1
 iterators2
+iterators3
+iterators4
+iterators5
